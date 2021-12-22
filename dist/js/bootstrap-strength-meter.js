@@ -35,7 +35,6 @@
             var template = '<div class="progress"><div class="progress-bar" role="progressbar"></div></div>';
             var progress;
             var progressBar;
-            var passcheckTimeout;
             var core = {
 
                 /**
@@ -95,10 +94,7 @@
                  * @param {Object} event
                  */
                 keyup: function(event) {
-                    if(passcheckTimeout)clearTimeout(passcheckTimeout);
-                    passcheckTimeout = setTimeout( function(){
-                        core.queue(event);
-                    },500);
+                    core.queue(event);
                 }
             };
 
